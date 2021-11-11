@@ -14,22 +14,25 @@ function countUniqueValues(values) {
     return 0;
   }
 
-  // We are going to use two pointers. Size is one of them, starts at the bigging of the array.
-  // The iterator i is the second counter, starts at index 1.
-  let size = 0;
+  // We are going to use two pointers.
+  // leftPointer is one of them, starts at the beginning of the array.
+  // rightPointer is the second pointer, starts at index 1.
+  let leftPointer = 0;
+  let rightPointer = 1;
 
-  for (let i = 1; i < values.length; i++) {
-    // The iterator pointer moves to the right on each iteration.
-    // When the current number is different than the number marked by the size pointer, size is
-    // incremented (moves right). We reuse the values parameter by reassigning the different number
-    // to the new position marked by the size pointer.
-    if (values[i] !== values[size]) {
-      size += 1;
-      values[size] = values[i];
+  for (; rightPointer < values.length; rightPointer++) {
+    // rightPointer moves to the right on each iteration.
+    // When the current number marked by rightPointer is different than the number marked by
+    // leftPointer, leftPointer is incremented (moves right).
+    // We reuse the values parameter by reassigning the different number to the new position
+    // marked by leftPointer.
+    if (values[leftPointer] !== values[rightPointer]) {
+      leftPointer += 1;
+      values[leftPointer] = values[rightPointer];
     }
   }
 
-  return size + 1;
+  return leftPointer + 1;
 }
 
 module.exports = {

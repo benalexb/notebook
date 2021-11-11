@@ -19,11 +19,9 @@ function validAnagram(stringOne, stringTwo) {
   const stringOneFrequency = stringOne.split('').reduce(frequencyReducer, {});
   const stringTwoFrequency = stringTwo.split('').reduce(frequencyReducer, {});
 
-  const stringOneKeys = Object.keys(stringOneFrequency);
-
   // Iterate the frequency keys from string one, checking if string two contains them.
   // Also check if the frequency count matches.
-  for (const key of stringOneKeys) {
+  for (const key of Object.keys(stringOneFrequency)) {
     const charMatch = stringTwoFrequency[key];
     if (!charMatch || stringOneFrequency[key] !== charMatch) {
       // If the frequencies don't match, or are missing a char, return false;
