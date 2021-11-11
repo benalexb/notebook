@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['jest'],
   rules: {
     'no-plusplus': 'off',
+    'no-console': 'off',
     'no-restricted-syntax': 'off',
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
