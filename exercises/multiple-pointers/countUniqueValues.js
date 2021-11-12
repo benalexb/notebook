@@ -21,9 +21,9 @@ function countUniqueValues(values) {
   let rightPointer = 1;
 
   for (; rightPointer < values.length; rightPointer++) {
-    // rightPointer moves to the right on each iteration.
-    // When the current number marked by rightPointer is different than the number marked by
-    // leftPointer, leftPointer is incremented (moves right).
+    // The rightPointer moves to the right on each iteration.
+    // When the current number marked by the rightPointer is different than the number marked by
+    // the leftPointer, the leftPointer is incremented (moves right).
     // We reuse the values parameter by reassigning the different number to the new position
     // marked by leftPointer.
     if (values[leftPointer] !== values[rightPointer]) {
