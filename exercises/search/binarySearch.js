@@ -30,6 +30,4 @@ const binarySearch = (numberList, searchValue) => {
   return -1;
 };
 
-binarySearch([1, 2, 3, 4, 5], 6);
-
 module.exports = { binarySearch };
