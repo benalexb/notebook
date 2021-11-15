@@ -34,4 +34,15 @@ const mergeSortedLists = (firstList, secondList) => {
   return result;
 };
 
-module.exports = { mergeSortedLists };
+// This recursive function will split the array in half until we end up with several single "sorted"
+// arrays (if it has length 1 then it is by definition already sorted). Then on each recursive call,
+// mergeSortedLists will concatenate the halves.
+const mergeSort = (numberList) => {
+  if (numberList.length <= 1) return numberList;
+  const center = Math.floor(numberList.length / 2);
+  const left = mergeSort(numberList.slice(0, center));
+  const right = mergeSort(numberList.slice(center));
+  return mergeSortedLists(left, right);
+};
+
+module.exports = { mergeSort, mergeSortedLists };
