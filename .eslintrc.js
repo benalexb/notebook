@@ -16,6 +16,7 @@ module.exports = {
     'no-plusplus': 'off',
     'no-console': 'off',
     'no-restricted-syntax': 'off',
+    'no-unused-expressions': 'off',
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
