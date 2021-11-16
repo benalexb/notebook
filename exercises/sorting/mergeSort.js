@@ -3,6 +3,7 @@
 // results array. If the arrays are of different length, when one of them has been iterated until
 // the end, we simply concatenated the remainder to the results array, assuming already sorted.
 
+// O(n)
 const mergeSortedLists = (firstList, secondList) => {
   const result = [];
   let firstPointer = 0;
@@ -37,6 +38,7 @@ const mergeSortedLists = (firstList, secondList) => {
 // This recursive function will split the array in half until we end up with several single "sorted"
 // arrays (if it has length 1 then it is by definition already sorted). Then on each recursive call,
 // mergeSortedLists will concatenate the halves.
+// O(n log n) where decomposition is O(log n) and merging is O(n)
 const mergeSort = (numberList) => {
   if (numberList.length <= 1) return numberList;
   const center = Math.floor(numberList.length / 2);

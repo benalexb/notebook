@@ -9,6 +9,8 @@
 // if the current value is less than the search value, rightPointer moves to the current pos.
 // The loop breaks when the value has been found, or the pointers intercept each other.
 
+// O(log n)
+
 const binarySearch = (numberList, searchValue) => {
   if (!numberList || numberList.length === 0) return -1;
 
