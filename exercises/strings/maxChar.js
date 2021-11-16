@@ -3,8 +3,7 @@ const maxChar = (str) => {
   const frequencyMap = str
     .split('')
     .reduce((acc, cur) => {
-      if (!acc[cur]) acc[cur] = 0;
-      acc[cur] += 1;
+      acc[cur] = ++acc[cur] || 1;
       return acc;
     }, {});
 
